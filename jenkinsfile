@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Git') {
+            steps{
+                git branch: 'master',url:'https://github.com/masireddyvamsidharreddy/linux_shell.git'
+            }
+        }
+        stage('shell') {
+            steps{
+                sh 'bash file.sh'
+            }
+        }
+    }
+}
